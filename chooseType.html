@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="keywords" content="选择类型"/>
+<meta name="description" content="选择类型" />
+<title>选择类型</title>
+<meta name="renderer" content="webkit"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+<meta name="viewport" content="initial-scale=1,width=device-width,maximum-scale=1,minimum-scale=1,user-scalable=no"/>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="format-detection" content="telephone=no">
+<meta name="format-detection" content="address=no">
+<!-- link css -->
+<link rel="stylesheet" type="text/css" href="css/m.css">
+<link rel="stylesheet" type="text/css" href="css/pubTopAndFoot.css">
+<link rel="stylesheet" type="text/css" href="css/chooseType.css">
+<!-- 小标志 -->
+<link rel="shortcut icon" type="image/x-ico" href="img/iconheader.png">
+
+
+<script type="text/javascript" src="js/rem.js"></script>
+<script type="text/javascript" src="js/axios.min.js"></script>
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/test.js" ></script>
+<script type="text/javascript" src="js/jquery.base64.js"></script>
+<script type="text/javascript" src="js/qs.js"></script>
+<script type="text/javascript" src="js/chooseType.js"></script>
+<script type="text/javascript" src="js/registration.js"></script>
+
+</head>
+<body>
+<!-- 头部header部分 -->
+<div class="header clearfix">
+	<div class="logo clearfix">
+		<img src="css/i/logo.png">
+		<span class="logoText">惠众通享公众平台</span>
+	</div>
+</div>
+<div class="marAuto clearfix">
+	<div class="radShow">
+		<!-- 流程线部分 -->
+		<h4 class="titleR titleText" id="titleR">注册</h4>
+		<ul class="processLine clearfix">
+			<li class="clearfix">
+				<var class="overSee">
+					<span class="overSee">1</span>		
+				</var>
+				<p class="twoBec">基本信息</p>
+			</li>
+			<li class="clearfix" id="typeTwo">
+				<var class="chooseOn" id="typeVar">
+					<span class="chooseOn" id="typeSpan">2</span>		
+				</var>
+				<p class="becColor" id="typeP">选择类型</p>
+			</li>
+			<li class="clearfix" id="infroPage">
+				<var id="infroVar">
+					<span id="infroSpan">3</span>		
+				</var>
+				<p id="infroP">信息登记</p>
+			</li>
+			<li class="clearfix" id="pubNumber">
+				<var id="pubNumVar">
+					<span id="pubNumSpan">4</span>		
+				</var>
+				<p id="pubNumP">公众号信息</p>
+			</li>
+		</ul>
+		<!-- 选择注册类型 -->
+		<div class="types" id="types">
+			<p class="typeText">感谢您加入惠众通享公众平台，请选择注册的账户类型，一旦成功创建公众号，类型不可更改
+			</p>
+			<div class="personal" id="personal">
+				<input type="radio" name="comType" id="perTypeRadio" />
+				<div class="contentOne">
+					<img src="img/oneself.png" class="personalImg">
+					<span class="personalText">个人号</span>
+				</div>
+				<div class="contentTwo">
+					<p>为个人提供的全方位信息传播媒介</p>
+					<p>创建价值，搭建信息窗口</p>
+				</div>
+				<span class="personalXian"></span>
+				<div class="contentThree">
+					<div class="contentThreeText">
+						<span>群发消息</span>
+						<b>1条/天</b>
+					</div>
+					<div class="contentThreeText">
+						<span>消息显示位置</span>
+						<b>公众号列表</b>
+					</div>
+					<div class="contentThreeText">
+						<span>自定义菜单</span>
+						<b>有</b>
+					</div>
+					<div class="contentThreeText">
+						<span>运营者管理</span>
+						<b>无</b>
+					</div>
+					<div class="contentThreeText">
+						<span>自定义菜单</span>
+						<b>无</b>
+					</div>
+					<div class="contentThreeText">
+						<span>运营者管理</span>
+						<b>无</b>
+					</div>
+				</div>	
+			</div>
+			<div class="enterprise" id="enterprise">
+				<input type="radio" name="comType" id="comTypeRadio" />				
+				<div class="contentOne">
+					<img src="img/com.png" class="enterpriseImg" />
+					<span class="personalText">企业号</span>
+				</div>
+				<div class="contentTwo">
+					<p>为企业提供强大的业务服务和H5功能</p>
+					<p class="zhanwei">创建价值，搭建信息窗口</p>
+				</div>
+				<span class="personalXian"></span>
+				<div class="contentThree">
+					<div class="contentThreeText">
+						<span>群发消息</span>
+						<b>2条/周</b>
+					</div>
+					<div class="contentThreeText">
+						<span>消息显示位置</span>
+						<b>会话列表</b>
+					</div>
+					<div class="contentThreeText">
+						<span>自定义菜单</span>
+						<b>有</b>
+					</div>
+					<div class="contentThreeText">
+						<span>运营者管理</span>
+						<b>无</b>
+					</div>
+					<div class="contentThreeText">
+						<span>自定义菜单</span>
+						<b>无</b>
+					</div>
+					<div class="contentThreeText">
+						<span>运营者管理</span>
+						<b>无</b>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- 个人号信息登记 -->
+		<div class="personalInfor disNone" id="personalInfor">
+			<h6 class="readProtocol">请您在填写下列信息前仔细阅读<a href="javascript:;">《惠众通享公众平台申请协议》</a></h6>
+			<div class="distance">
+				<p class="fillName" id="writeName">请填写姓名</p>
+			</div>
+			<dl class="topInfor clearfix">
+				<dt>身份证姓名</dt>
+				<dd>
+					<input type="text" id="IDcardName" class="IDname" />
+					<p class="bomHeight" id="warningName">信息审核成功后身份证姓名不可修改</p>
+				</dd>
+			</dl>
+			<p class="fillName" id="writeNum">身份证格式不正确，请重新填写</p>
+			<dl class="topInfor dlcustomIDnum clearfix">
+				<dt>身份证号码</dt>
+				<dd>
+					<input type="text" id="IDcardNum" maxlength="18" class="IDname" />
+					<p class="bomHeight" id="warningNum">请输入您的身份证号码</p>
+				</dd>
+			</dl>
+			<dl class="topInfor dlcustomType clearfix">
+				<dt>证件类型</dt>
+				<dd>
+					<label>
+						<em id="normalChose"></em>
+						<input type="radio" value="1" name="perCardType" class="cardType" id="normal" />
+						<var>二代身份证</var>					
+					</label>
+					<label>
+						<em id="ADhocChose"></em>
+						<input type="radio" value="2" name="perCardType" class="cardType leftW" id="ADhoc" />	
+						<var>临时身份证</var>
+					</label>
+				</dd>
+			</dl>
+			<div class="IDpic clearfix">
+				<h6>证件照片
+					<em class="smallText">
+						(请上传真实有效的身份证照片，确保证件号码清晰可识别、四角完整，大小不超过10MB)
+					</em>			
+				</h6>
+				<ul class="clearfix">
+					<li>
+						<span>
+							<img id="preview">
+							<input type="file" class="upIDPic" id="IDcardFront" />
+							<var></var>
+						</span>
+						<p>身份证正面</p>
+					</li>
+					<li>
+						<span>
+							<img id="backImg">
+							<input type="file" class="upIDPic" id="IDcardBack" />
+							<var></var>
+						</span>
+						<p>身份证反面</p>
+					</li>
+					<li>
+						<span>
+							<img id="HeldImg">
+							<input type="file" class="upIDPic" id="IDcardHeld" />
+							<var></var>
+						</span>
+						<p>手持身份证照片</p>						
+					</li>
+					<li>
+						<span class="exampleShowOne">
+							<b>示例</b>
+						</span>
+					</li>
+					<li>
+						<span class="exampleShowTwo">
+							<b>示例</b>
+						</span>						
+					</li>
+					<li>
+						<span class="exampleShowThree">
+							<b>示例</b>
+						</span>						
+					</li>
+				</ul>
+				<b>身份验证</b>
+				<div class="validation clearfix">
+					<span>
+						<img src="" class="revalidation" id="qrCode" />
+						<div class="hoverShow disNone" id="hoverShow">
+							<div class="widthHei">
+								<i></i>
+								<p>重新验证</p>
+							</div>
+						</div>
+					</span>
+					<div class="maText">
+						为了验证你的身份，请用注册公众账号的IM账户在移动端打开“扫一扫”功能，扫描该二维码进行验证，本验证方式不扣除任何费用。
+						<p>注册后，扫码的IM账户将成为该公众账号的管理者。</p>
+					</div>
+				</div>				
+			</div>
+			<div class="contactPhone">			
+				<p class="fillName" id="phoneError">请输入正确的手机号码！</p>
+			</div>
+			<dl class="topInfor dlcustomPhone clearfix">
+				<dt>联系手机</dt>
+				<dd>
+					<input type="text" id="phoneNum" maxlength="11" class="IDname" />
+					<p class="bomHeight" id="phoneWain" style="display: none;">信息审核成功后身份证姓名不可修改</p>
+				</dd>
+			</dl>
+			<p class="fillName" id="pervdError">请输入正确的图片验证码！</p>
+			<dl class="topInfor dlcustomVD clearfix">
+				<dt>验证码</dt>
+				<dd>
+					<var class="showVd">
+						<img src="" id="showVd" />
+					</var>
+					<var class="notKnow" id="notKnow">看不清楚？换一张</var>
+					<input type="text" id="pervd" maxlength="8" class="IDname" />
+<!-- 					<p class="bomHeight">信息审核成功后身份证姓名不可修改</p> -->
+				</dd>
+			</dl>
+			<!-- <dl class="topInfor dlcustomSMS clearfix">
+				<dt>短信验证码</dt>
+				<dd>
+					<input type="text" id="perSmsVd" class="IDname" />
+					<span class="sendCustom" id="preSendBg">发送验证</span>
+				</dd>
+			</dl> -->
+			<div class="btnFo clearfix">
+				<button id="returnTypePer" id="">上一步</button>
+				<button disabled  id="nextGoPer">继续</button>	
+			</div>
+		</div>
+		<!-- 个人公众号信息 -->
+		<div class="perNumberInfro disNone" id="perNumberInfro">
+			<p class="perNumPubError" id="perNumNameError">请填写个人号名称</p>
+			<dl class="clearfix perNumNameDl">
+				<dt>个人号名称</dt>
+				<dd>
+					<input type="text" name="" id="perNumName" />
+					<p class="perNumPubWain" id="perNumNameWain">2-16个汉字，4-32个英文字符</p>
+				</dd>
+			</dl>
+			<p class="perNumPubError" id="perNumIntroduceError">请填写个人号介绍</p>
+			<dl class="clearfix perNumIntroduceDl">
+				<dt>个人号介绍</dt>
+				<dd>
+					<textarea id="perNumIntroduceText" maxlength="100" ></textarea>
+					<p class="perNumPubWain" id="perNumInWain">4-100个汉字，介绍此公众账号功能及特色</p>
+				</dd>
+			</dl>
+			<dl class="clearfix perNumTypeDl">
+				<dt>标签分类</dt>
+				<dd>
+					<select class='marks' id="markSelect">
+
+					</select>
+				</dd>
+			</dl>
+			<p class="perNumPubError">上传失败</p>
+			<dl class="clearfix perNumheadImgDl">
+				<dt>头像设置</dt>
+				<dd>
+					<span id="perImgUp">
+						<var></var>
+					</span>
+					<div class="Masking disNone" id="Masking"></div>
+					<div class="selectPhoto disNone" id="selectPhoto">
+						<div class="photoHeader">
+							<b>头像设置</b>
+							<i id="close" id="close"></i>
+						</div>
+						<div class="photoBody">
+							<div class="photoBodyLeft">	
+								<div id="box">
+									<img src="" id="img1"/>
+									<img src="" id="img2"/>
+									<div id="main">
+										<div class="div minDiv" id="up"></div>
+										<div class="div minDiv2" id="left_up"></div>
+										<div class="div minDiv3" id="right_up"></div>
+										<div class="div minDiv4" id="left"></div>
+										<div class="div minDiv5" id="right"></div>
+										<div class="div minDiv6" id="left_down"></div>
+										<div class="div minDiv7" id="down"></div>
+										<div class="div minDiv8" id="right_down"></div>
+									</div>
+								</div>
+								<div class="fileDeck" id="perFileDeck">
+									<i></i><b>选择图片</b>
+									<input type="file" id="setHeadInput" class="selectImg" onchange="selectImg(this)">
+								</div>
+								<p id="imgHint">支持jpg、gif、png、bmp，尺寸200*200以上</p>
+							</div>
+							<div class="photoBodyRight">
+								<b>预览</b>
+								<div class="frame">	
+									<canvas id="canvas"></canvas>	
+								</div>
+								<p>方形头像</p>
+							</div>
+						</div>
+						<div class="photoBottom">
+							<var id="reselect">
+								<input type="file" id="afreshChose" onchange="selectImg(this)"/>
+								<i></i>
+								<b>重新选择</b>
+							</var>
+							<input type="button" id="determine" value="确定" />
+							<input type="button" id="cancel" value="取消" />
+						</div>
+					</div>
+					<p class="upHeaderImg">上传图片</p>
+				</dd>
+			</dl>
+			<dl class="clearfix perNumAddDl">
+				<dt>地区</dt>
+				<dd class="clearfix">
+					<select id="province" class="rightMar">
+						<option value="" style="display: none;">请选择省份</option>
+					</select>
+					<select id="city">
+						<option value="" style="display: none;">请选择城市</option>
+					</select>
+				</dd>
+			</dl>
+			<div class="perNumBtnfo clearfix">
+				<button id="pubNumpreGo">上一步</button>
+				<button class="overPer" disabled id="finishPre">完成</button>
+			</div>	
+		</div>
+		<!-- 企业号信息登记 -->
+		<div class="enterpriseInfor personalInfor disNone noPadLeft" id="enterpriseInfor">
+			<div class="topCon">
+				<h6 class="readProtocol">请您在填写下列信息前仔细阅读<a href="javascript:;">《惠众通享公众平台申请协议》</a></h6>
+				<dl class="comName clearfix">
+					<dt>企业名称</dt>
+					<dd>
+						<p class="writeComName" id="comNameError">请填写企业名称</p>
+						<input type="text" id="companyName" />
+						<p class="bomCssTwo" id="comNameWain">需要当地政府颁发的商业许可证书或企业注册证书上的企业名称</p>
+						<p class="noBom" id="comNameWain2">完全一致，信息审核成功后，企业名称不可修改。</p>
+					</dd>
+				</dl>
+				<dl class="comName licenseNum clearfix">
+					<dt>营业执照注册号</dt>
+					<dd>
+						<p class="writeComName" id="workNumberError">请填写营业执照注册号</p>
+						<input type="text" id="workNumber" maxlength="18" />
+						<p class="bomCssTwo" id="workNumberWain">请输入15位营业执照注册号或18位的统一社会信用代码</p>
+					</dd>
+				</dl>
+				<h5>申请函上传
+					<span>(请上传含有企业盖章的申请函，确保清晰，文件不得大于10MB)</span>
+				</h5>
+				<div class="IDpic noTop">
+					<ul class="clearfix">
+						<li>
+							<span>
+								<img src="" id="applicationImg">
+								<input type="file" class="upIDPic" id="application" />
+								<var></var>
+							</span>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<h4>管理者信息登记</h4>   
+			<div class="personalInfor newPadtop">
+				<dl class="comName manName clearfix">
+					<dt>
+						<p>管理者</p>
+						<p>身份证姓名</p>
+					</dt>
+					<dd>
+						<p class="writeComName" id="comManNameError">请填写姓名</p>
+						<input type="text" id="comManName" />
+						<p class="bomCssTwo" id="comManNameWain">请填写注册该公众账号的管理者姓名</p>
+					</dd>
+				</dl>
+				<dl class="comName manName manNum clearfix">
+					<dt>
+						<p>管理者</p>
+						<p>身份证号码</p>
+					</dt>
+					<dd>
+						<p class="writeComName" id="comManIDnumError">身份证格式不正确，请重新填写</p>
+						<input type="text" id="comManIDnum" maxlength="18" />
+						<p class="bomCssTwo" id="comManIDnumWain">请输入您的身份证号码</p>
+					</dd>
+				</dl>
+				<dl class="topInfor dlcustomType clearfix">
+					<dt>证件类型</dt>
+					<dd>
+						<label>
+							<em id="comNormalChose"></em>
+							<input type="radio" value="1" name="comCardType" class="cardType" id="comNormal" />
+							<var>二代身份证</var>					
+						</label>
+						<label>
+							<em id="comADhocChose"></em>
+							<input type="radio" value="2" name="comCardType" class="cardType leftW" id="comADhoc" />	
+							<var>临时身份证</var>
+						</label>
+					</dd>
+				</dl>
+				<div class="IDpic clearfix">
+					<h6>管理者证件照片
+						<em class="smallText">
+							(请上传真实有效的身份证照片，确保证件号码清晰可识别、四角完整，大小不超过10MB)
+						</em>			
+					</h6>
+					<ul class="clearfix">
+						<li>
+							<span>
+								<img id="manPreview">
+								<input type="file" class="upIDPic" id="comManIDFront" />
+								<var></var>
+							</span>
+							<p>身份证正面</p>
+						</li>
+						<li>
+							<span>
+								<img id="manPreviewBack">
+								<input type="file" class="upIDPic" id="comManIDBack" />
+								<var></var>
+							</span>
+							<p>身份证反面</p>
+						</li>
+						<li>
+							<span>
+								<img id="manPreviewHeld">
+								<input type="file" class="upIDPic" id="comManIDHeld" />
+								<var></var>
+							</span>
+							<p>手持身份证照片</p>						
+						</li>
+						<li>
+							<span class="exampleShowOne">
+								<b>示例</b>
+							</span>
+						</li>
+						<li>
+							<span class="exampleShowTwo">
+								<b>示例</b>
+							</span>						
+						</li>
+						<li>
+							<span class="exampleShowThree">
+								<b>示例</b>
+							</span>						
+						</li>
+					</ul>
+					<b>身份验证</b>
+					<div class="validation clearfix">
+						<span>
+							<img src="" class="revalidation" id="comQrCode" />
+							<div class="hoverShow disNone" id="comhoverShow" >
+								<div class="widthHei">
+									<i></i>
+									<p>重新验证</p>
+								</div>
+							</div>
+						</span>
+						<div class="maText">
+							为了验证你的身份，请用注册公众账号的IM账户在移动端打开“扫一扫”功能，扫描该二维码进行验证，本验证方式不扣除任何费用。
+							<p>注册后，扫码的IM账户将成为该公众账号的管理者。</p>
+						</div>
+					</div>				
+				</div>
+			<div class="contactPhone">			
+				<p class="fillName" id="comManPhoneError">请输入正确的手机号码！</p>
+			</div>
+			<dl class="topInfor dlcustomPhone clearfix">
+				<dt>联系手机</dt>
+				<dd>
+					<input type="text" id="comManPhone" maxlength="11" class="IDname" />
+					<p class="bomHeight" id="comManPhoneWain" style="display: none;">信息审核成功后身份证姓名不可修改</p>
+				</dd>
+			</dl>
+			<p class="fillName" id="comvdError">请输入正确的图片验证码！</p>
+			<dl class="topInfor dlcustomVD clearfix">
+				<dt>验证码</dt>
+				<dd>
+					<var class="showVd">
+						<img src="" id="comshowVd"/>
+					</var>
+					<var class="notKnow" id="comnotKnow">看不清楚？换一张</var>
+					<input type="text" id="comVdInput" maxlength="8" class="IDname" />
+<!-- 					<p class="bomHeight">信息审核成功后身份证姓名不可修改</p> -->
+				</dd>
+			</dl>
+			<!-- <dl class="topInfor dlcustomSMS clearfix">
+				<dt>短信验证码</dt>
+				<dd>
+					<input type="text" id="comSmsVd" class="IDname" />
+					<span class="sendCustom" id="updateSendBg">发送验证</span>
+				</dd>
+			</dl> -->
+			<div class="btnFo clearfix">
+				<button id="returnTypeCom" >上一步</button>
+				<button disabled id="comGoOn">继续</button>
+			</div>
+		</div>
+	</div>
+	<!-- 企业公众号信息 -->
+	<div class="perNumberInfro disNone" id="comNumberInfro">
+		<p class="perNumPubError" id="comNumNameError">请填写企业号名称</p>
+		<dl class="clearfix perNumNameDl">
+			<dt>企业号名称</dt>
+			<dd>
+				<input type="text" name="" id="comNumName" />
+				<p class="perNumPubWain" id="comNumNameWain">2-16个汉字，4-32个英文字符</p>
+			</dd>
+		</dl>
+		<p class="perNumPubError" id="comNumIntroduceError">请填写企业号介绍</p>
+		<dl class="clearfix perNumIntroduceDl">
+			<dt>企业号介绍</dt>
+			<dd>
+				<textarea id="comNumIntroduceText"></textarea>
+				<p class="perNumPubWain" id="comNumInWain">4-100个汉字，介绍此公众账号功能及特色</p>
+			</dd>
+		</dl>
+		<dl class="clearfix perNumTypeDl">
+			<dt>标签分类</dt>
+			<dd>
+				<select class='marks' id="comMarkSelect">
+
+				</select>
+			</dd>
+		</dl>
+		<p class="perNumPubError">上传失败</p>
+		<dl class="clearfix perNumheadImgDl">
+			<dt>头像设置</dt>
+			<dd>
+				<span id="comImgUp">
+					<var></var>
+				</span>
+				<div class="Masking disNone" id="comMasking"></div>
+				<div class="selectPhoto disNone" id="comSelectPhoto">
+					<div class="photoHeader">
+						<b>头像设置</b>
+						<i id="comClose"></i>
+					</div>
+					<div class="photoBody">
+						<div class="photoBodyLeft">
+							<div id="comBox">
+								<img src="" id="comImg1"/>
+								<img src="" id="comImg2"/>
+								<div id="commain">
+									<div class="div minDiv" id="comup"></div>
+									<div class="div minDiv2" id="comleft_up"></div>
+									<div class="div minDiv3" id="comright_up"></div>
+									<div class="div minDiv4" id="comleft"></div>
+									<div class="div minDiv5" id="comright"></div>
+									<div class="div minDiv6" id="comleft_down"></div>
+									<div class="div minDiv7" id="comdown"></div>
+									<div class="div minDiv8" id="comright_down"></div>
+								</div>
+							</div>
+							<div class="fileDeck" id="comFileDeck">
+								<i></i><b>选择图片</b>
+								<input type="file" id="comSetHeadInput" class="selectImg" onchange="comSelectImg(this)">
+							</div>
+							<p id="comImgHint">支持jpg、gif、png、bmp，尺寸200*200以上</p>
+						</div>
+						<div class="photoBodyRight">
+							<b>预览</b>
+							<div class="frame">
+								<canvas id="comcanvas"></canvas>	
+							</div>
+							<p>方形头像</p>
+						</div>
+					</div>
+					<div class="photoBottom">
+						<var id="comReselect">
+							<input type="file" id="comAfreshChose" onchange="comSelectImg(this)" />
+							<i></i>
+							<b>重新选择</b>
+						</var>
+						<input type="button" id="comDetermine" value="确定" />
+						<input type="button" id="comCancel" value="取消" />
+					</div>
+				</div>
+				<p class="upHeaderImg">上传图片</p>
+			</dd>
+		</dl>
+		<dl class="clearfix perNumAddDl">
+			<dt>地区</dt>
+			<dd class="clearfix">
+				<select id="comProvince" class="rightMar">
+					<option value="" style="display: none;">请选择省份</option>
+				</select>
+				<select id="comCity">
+					<option value="" style="display: none;">请选择城市</option>
+				</select>
+			</dd>
+		</dl>
+		<div class="perNumBtnfo clearfix">
+			<button id="pubComNumpreGo">上一步</button>
+			<button class="overPer" id="comFinish" disabled>完成</button>
+		</div>	
+	</div>
+	</div>
+</div>
+<div class="footer">
+	<ul class="clearfix">
+		<li><a href="javascript:;">关于我们</a><em>|</em></li>
+		<li><a href="javascript:;">联系我们</a><em>|</em></li>
+		<li><a href="javascript:;">客服中心</a><em>|</em></li>
+		<li><a href="javascript:;">服务协议</a><em>|</em></li>
+		<li><a href="javascript:;">侵权投诉</a><em>|</em></li>
+		<li><a href="javascript:;">友情链接</a></li>
+	</ul>
+	<p>北京明日众创科技有限公司版权所有&copy;2016-2018<span>经营许可证：91110106MA009M9G4T</span></p>
+</div>
+
+</body>
+</html>

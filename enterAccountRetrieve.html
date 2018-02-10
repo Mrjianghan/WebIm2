@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="keywords" content="企业账号找回"/>
+<meta name="description" content="企业账号找回" />
+<title>企业账号找回</title>
+<meta name="renderer" content="webkit"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+<meta name="viewport" content="initial-scale=1,width=device-width,maximum-scale=1,minimum-scale=1,user-scalable=no"/>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="format-detection" content="telephone=no">
+<meta name="format-detection" content="address=no">
+<!-- link css -->
+<link rel="stylesheet" type="text/css" href="css/m.css">
+<link rel="stylesheet" type="text/css" href="css/chooseType.css">
+<link rel="stylesheet" type="text/css" href="css/pubTopAndFoot.css">
+<link rel="stylesheet" type="text/css" href="css/enterAccountRetrieve.css">
+<link rel="stylesheet" href="source/Font-Awesome-master/css/font-awesome.min.css">
+<link rel="shortcut icon" type="image/x-ico" href="img/iconheader.png">
+
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/axios.min.js"></script>
+<script type="text/javascript" src="js/qs.js"></script>
+<script type="text/javascript" src="js/rem.js"></script>
+</head>
+<body>
+<!-- 头部header部分 -->
+<div class="header clearfix">
+	<div class="logo clearfix">
+		<img src="css/i/logo.png">
+		<span class="logoText">惠众通享公众平台</span>
+	</div>
+</div>
+<!-- 中间内容部分 -->
+<div class="marAuto clearfix">
+	<div class="radShow">
+		<div class="enterpriseInfor personalInfor noPadTop noPadLeft">
+			<h4>更换管理者设置<span id="hideSpan">-管理者信息登记</span></h4>
+			<ul class="processLine flowXian clearfix">
+				<li class="clearfix">
+					<var class="overSee">
+						<span class="overSee">1</span>		
+					</var>
+					<p class="twoBec">邮箱验证</p>
+				</li>
+				<li class="clearfix">
+					<!-- //overSee -->
+					<var class="chooseOn" id="registerOneVar">
+						<span class="chooseOn" id="registerOneSpan">2</span>		
+					</var>
+					<p class="becColor" id="registerOneP">现管理者登记</p>
+				</li>
+				<li class="clearfix">
+					<var class="" id="registerTwoVar">
+						<span class="" id="registerTwoSpan">3</span>		
+					</var>
+					<p class="" id="registerTwoP">完成</p>
+				</li>
+			</ul>
+			<!-- 企业账号找回第二步 -->
+			<div class="personalInfor newPadtop" id="pageOnefind">
+				<dl class="comName manName clearfix">
+					<dt>
+						<p>管理者</p>
+						<p>身份证姓名</p>
+					</dt>
+					<dd>
+						<p class="writeComName" id="comManNameError">请填写姓名</p>
+						<input type="text" id="comManName" />
+						<p class="bomCssTwo" id="comManNameWain">请填写注册该公众账号的IM账户拥有着姓名</p>
+					</dd>
+				</dl>
+				<dl class="comName manName manNum clearfix">
+					<dt>
+						<p>管理者</p>
+						<p>身份证号码</p>
+					</dt>
+					<dd>
+						<p class="writeComName" id="comManIDnumError">身份证格式不正确，请重新填写</p>
+						<input type="text" id="comManIDnum" maxlength="18" />
+						<p class="bomCssTwo" id="comManIDnumWain">请输入您的身份证号码</p>
+					</dd>
+				</dl>
+				<dl class="topInfor dlcustomType clearfix">
+					<dt>证件类型</dt>
+					<dd>
+						<label>
+							<em id="comNormalChose"></em>
+							<input type="radio" name="comCardTypeFind" value="1" class="cardType" id="comNormal" />
+							<var>二代身份证</var>					
+						</label>
+						<label>
+							<em id="comADhocChose"></em>
+							<input type="radio" name="comCardTypeFind" value="2" class="cardType leftW" id="comADhoc" />	
+							<var>临时身份证</var>
+						</label>
+					</dd>
+				</dl>
+				<div class="IDpic clearfix">
+					<h6>管理者证件照片
+						<em class="smallText">
+							(请上传真实有效的身份证照片，确保证件号码清晰可识别、四角完整，大小不超过10MB)
+						</em>			
+					</h6>
+					<ul class="clearfix">
+						<li>
+							<span>
+								<img id="manPreview">
+								<input type="file" class="upIDPic" id="comManIDFront" />
+								<var></var>
+							</span>
+							<p>身份证正面</p>
+						</li>
+						<li>
+							<span>
+								<img id="manPreviewBack">
+								<input type="file" class="upIDPic" id="comManIDBack" />
+								<var></var>
+							</span>
+							<p>身份证反面</p>
+						</li>
+						<li>
+							<span>
+								<img id="manPreviewHeld">
+								<input type="file" class="upIDPic" id="comManIDHeld" />
+								<var></var>
+							</span>
+							<p>手持身份证照片</p>						
+						</li>
+						<li>
+							<span class="exampleShowOne">
+								<b>示例</b>
+							</span>
+						</li>
+						<li>
+							<span class="exampleShowTwo">
+								<b>示例</b>
+							</span>						
+						</li>
+						<li>
+							<span class="exampleShowThree">
+								<b>示例</b>
+							</span>						
+						</li>
+					</ul>
+					<b>法人授权书</b>
+					<div class="validation clearfix">
+						<span>
+							<img src="" id="authorizationImg" style="display: none;" />
+							<input type="file" id="authorizationInput" name="" class="upIDPic" />
+							<var></var>
+						</span>
+					</div>
+					<b class="bsText">营业执照照片</b>
+					<div class="validation bslicense clearfix">
+						<span>
+							<img src="" style="display: none;" id="bslicenseImg" />
+							<input type="file" name="" class="upIDPic" id="bslicenseInput" />
+							<var></var>
+						</span>
+					</div>				
+				</div>
+				<div class="contactPhone">			
+					<p class="fillName" id="comManPhoneError">请输入正确的手机号码！</p>
+				</div>
+				<dl class="topInfor dlcustomPhone clearfix">
+					<dt>联系手机</dt>
+					<dd>
+						<input type="text" id="comManPhone" maxlength="11" class="IDname" />
+						<p class="bomHeight" id="comManPhoneWain">信息审核成功后身份证姓名不可修改</p>
+					</dd>
+				</dl>
+				<p class="fillName" id="comvdError">请输入正确的图片验证码！</p>
+				<dl class="topInfor dlcustomVD clearfix">
+					<dt>验证码</dt>
+					<dd>
+						<var class="showVd">
+							<img src="" id="comshowVd"/>
+						</var>
+						<var class="notKnow" id="comnotKnow">看不清楚？换一张</var>
+						<input type="text" id="comVdInput" maxlength="8" class="IDname" />
+								<!-- <p class="bomHeight">信息审核成功后身份证姓名不可修改</p> -->
+					</dd>
+				</dl>
+				<dl class="topInfor dlcustomSMS clearfix">
+					<dt>短信验证码</dt>
+					<dd>
+						<input type="text" id="smsVd" class="IDname" />
+						<span class="sendCustom" id="updateSendBg">发送验证</span>
+					</dd>
+				</dl>
+				<div class="btnFo clearfix">
+					<button id="returnTypeCom" disabled>下一步</button>
+				</div>
+			</div>
+			<!-- 企业账号找回第三步 -->
+			<div class="disNone" id="pageTwofind">
+				<div class="pageTwofind clearfix">
+					<img src="img/duihao.png" />
+					<p>更换管理者设置成功！请耐心等待审核</p>
+					<p class="topDistance">72小时后会反馈审核结果给您。</p>
+				</div>
+				<h6 class="callMe">如有问题，请联系客服：000-000-000</h6>
+				<a href="index.html" class="returnIndex">返回首页</a>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- 底部部分 -->
+<div class="footer">
+	<ul class="clearfix">
+		<li><a href="javascript:;">关于我们</a><em>|</em></li>
+		<li><a href="javascript:;">联系我们</a><em>|</em></li>
+		<li><a href="javascript:;">客服中心</a><em>|</em></li>
+		<li><a href="javascript:;">服务协议</a><em>|</em></li>
+		<li><a href="javascript:;">侵权投诉</a><em>|</em></li>
+		<li><a href="javascript:;">友情链接</a></li>
+	</ul>
+	<p>北京明日众创科技有限公司版权所有&copy;2016-2018<span>经营许可证：91110106MA009M9G4T</span></p>
+</div>
+<script type="text/javascript" src="js/enterAccountRetrieve.js"></script>
+</body>
+</html>

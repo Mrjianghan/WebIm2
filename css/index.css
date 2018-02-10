@@ -1,0 +1,290 @@
+.bannerImg{
+	width: 100%;
+	height: 7rem;
+	background:url(i/background.png) no-repeat 0 0;
+	background-size: 100% 100%;
+}
+.bannerImg .loginFrame{
+	width: 5.6rem;
+	height:5.2rem;
+	float: right;
+	margin:0.9rem 1.2rem 0 0; 
+	border:1px solid #767489;
+	border-radius: 5px;
+	background: #fff;
+	/*box-sizing: border-box;*/
+}
+.loginFrame h5{
+	font-size: 0.28rem;
+	color: #474747;
+	font-weight: normal;
+	padding: 0.32rem 0 0.2rem 0.52rem;
+}
+.loginFrame .hint{
+	color: #e15f63;
+	font-size: 0.16rem;
+	padding-bottom:0.1rem;
+	padding-left: 0.52rem;
+	/*display: none;*/
+	opacity: 0;
+	/* 双击文本不选中 */
+	-webkit-user-select:none;
+    -moz-user-select:none;
+    -ms-user-select:none;
+    user-select:none;
+}
+.loginFrame .accountPassword{
+	margin:0 0.54rem;
+	height: 1.4rem;
+	border:1px solid #cbcbcb;
+	border-radius: 5px;
+}
+.loginFrame .accountPassword .account{
+	width: 100%;
+	height: 0.7rem;
+	border-bottom: 1px solid #cbcbcb;
+}
+.loginFrame em{
+	float:left;
+	width: 0.23rem;
+	height: 0.26rem;
+	background: url(i/account.png) no-repeat 0 0;
+	background-size: 100% 100%;
+	margin-top: 0.23rem;
+	margin-left: 0.19rem;
+}
+.loginFrame .passPng{
+	width: 0.23rem;
+	margin-right: 0.04rem;
+	background: url(i/password.png) no-repeat 0 0;
+	background-size: 100% 100%;
+}
+.validation .vdPng{
+	width: 0.22rem;
+	background: url(i/vdPng.png) no-repeat 0 0;
+	background-size: 100% 100%;
+}
+.loginFrame .accountPassword input{
+	border:none;
+	background: none;
+	padding-left: 0.09rem;
+	width: 89%;
+	box-sizing: border-box;
+	height: 100%;
+	font-size: 0.24rem;
+	vertical-align: top;
+
+}
+.loginFrame .accountPassword input::-webkit-input-placeholder{
+    color: #cbcbcb;
+    font-size: 0.24rem;
+    line-height: 0.7rem;
+}
+.loginFrame .accountPassword input::-moz-input-placeholder{
+    color: #cbcbcb;
+    font-size: 0.24rem;
+    line-height: 0.7rem;
+}
+.loginFrame .accountPassword input::input-placeholder{
+    color: #cbcbcb;
+    font-size: 0.24rem;
+    line-height: 0.7rem;
+}
+.loginFrame .accountPassword .nobdbom{
+	border-bottom: none; 
+}
+.loginFrame .validation{
+	margin:0.2rem 0.54rem 0 0.54rem;
+	border:1px solid #cbcbcb;
+	border-radius: 5px;
+	height: 0.7rem;
+}
+.loginFrame .captcha{
+	font-style: normal;
+	float: right;
+	margin-top: -0.3rem;
+	margin-right: 0.74rem;
+	width: 1.4rem;
+	height: 0.4rem;
+	background-color: #eeeef0;
+	color: #999999;
+	text-align: center;
+	line-height: 0.4rem;
+	font-size: 0.16rem;
+	display: none;
+	border-radius: 5px;
+}
+.validation input{
+	border:none;
+	background: none;
+	padding-left: 0.09rem;
+	height: 100%;
+	font-size: 0.22rem;
+	vertical-align: top;
+	width: 2.3rem;
+}
+.validation input::-webkit-input-placeholder{
+    color: #cbcbcb;
+    font-size: 0.24rem;
+    line-height: 0.7rem;
+}
+.validation input::-moz-input-placeholder{
+    color: #cbcbcb;
+    font-size: 0.24rem;
+    line-height: 0.7rem;
+}
+.validation input::input-placeholder{
+    color: #cbcbcb;
+    font-size: 0.24rem;
+    line-height: 0.7rem;
+}
+.validation span{
+	float: right;
+	width: 1.4rem;
+	height: 0.5rem;
+	border:1px solid #cbcbcb;
+	margin-top: 0.09rem;
+	margin-right: 0.17rem;
+	cursor: pointer;
+}
+.validation span>img{
+	width:100%;
+	height: 100%;
+}
+.loginFrame .framebtn{
+	padding:0.5rem 0.54rem 0 0.54rem;
+}
+.loginFrame .loginBtn{
+	border: none;
+	background-color: #cbcbcb; 
+	width: 100%;
+	height: 0.5rem;
+	line-height: 0.5rem;
+	color:#fff;
+	cursor: pointer;
+	margin-bottom: 0.1rem;
+	display: block;
+	text-align: center;
+	font-size: 0.2rem;
+	text-decoration: none;
+	border-radius: 5px;
+}
+.framebtn .labelCur{
+	float: left;
+	cursor: pointer;
+	margin-top: 0.03rem;
+}
+.framebtn var{
+	font-style: normal;
+	font-size: 0.2rem;
+	color:#474747;
+	padding-left: 0.13rem;
+    -webkit-user-select:none;
+    -moz-user-select:none;
+    -ms-user-select:none;
+    user-select:none;
+}
+.framebtn .redefine{
+	float: left;
+	margin-top: 2px;
+	width: 0.22rem;
+	height: 0.22rem;
+	background:url(i/unselected.png) no-repeat 0 0;
+	background-size: 100% 100%;
+}
+.framebtn .rememberSelect{
+	background:url(i/select.png) no-repeat 0 0;
+	background-size: 100% 100%;
+}
+.framebtn input{
+	display: none;
+	opacity: 0;
+	width: 0;
+	height: 0;
+	overflow: hidden;
+}
+.framebtn .forgetPwd{
+	float: right;
+	text-decoration: none;
+	color:#2284ff;
+	font-size: 0.2rem;
+}
+.framebtn .findAc{
+	margin-right: 0.3rem;
+
+}
+/*.forgetPwd:hover{
+	color:#2284ff;
+}*/
+.classification{
+	padding: 1rem 0 1.85rem 1.2rem;
+}
+.classification h4{
+	font-size: 0.3rem;
+	font-weight: normal;
+	color:#333 ;
+	padding-bottom: 0.82rem;
+}
+.classification .selfAndCom{
+	padding-left: 1.8rem;
+}
+.selfAndCom .pubFrame{
+	float: left;
+	width:5rem; 
+	height:4rem;
+	margin-right: 2.7rem;
+	border:1px solid #dfdfdf;
+	border-radius: 10px;
+}
+.selfAndCom .nomr{
+	margin-right: 0;
+}
+.selfAndCom .pubFrame .sc{
+	padding-top: 0.65rem;
+}
+.pubFrame .sc img{
+	width: 1.1rem;
+	height: 1.1rem;
+	display: block;
+	margin: 0 auto;
+}
+.pubFrame .sc var{
+	font-style: normal;
+	display: block;
+	padding-top: 0.36rem;
+	padding-bottom: 0.3rem;
+	font-size: 0.3rem;
+	text-align: center;
+}
+.pubFrame .sc .resolve{
+	padding:0rem 0.5rem 0rem 0.63rem;
+	line-height: 0.43rem; 
+	font-size: 0.24rem;
+	text-align: left;
+/*	padding-left: 0.63rem;
+	padding-right: 0.63rem;*/
+}
+.pubFrame .lookOver{
+	display: block;
+	width: 2.3rem;
+	height: 0.6rem;
+	margin: 1.69rem auto 0;
+	background-color: #2284ff;
+	text-align: center;
+	line-height: 0.6rem;
+	color: #fff;
+	font-size: 0.22rem;
+	border-radius: 5px;
+	text-decoration: none;
+	display: none;
+}
+.pubFrame:hover .sc{
+	display: none;
+}
+.pubFrame:hover {
+	background-color: #f6f6f6;
+}
+.pubFrame:hover .lookOver{
+	display: block;
+	
+}

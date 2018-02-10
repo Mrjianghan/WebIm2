@@ -1,0 +1,99 @@
+
+
+/* 邮件返回之后 */
+.noPadTop{
+	padding-top: 0;
+}
+.noPadTop h4{
+	height: 1rem;
+	line-height: 1rem;
+}
+.noPadTop h4 span{
+	font-size: 0.22rem;
+}
+.noPadTop .flowXian li{
+	width: 33%;
+	float: left;
+}
+.noPadTop li var span{
+	left: 40%;
+}
+.IDpic .validation{
+	margin-left: 0.65rem;
+	border: none;
+	width: 8rem;
+}
+.IDpic .bslicense{
+	margin-top: 0.6rem;
+	margin-left: 0.48rem;
+}
+.IDpic .bsText{
+	margin-top: 0.6rem;
+
+}
+.IDpic .validation span{
+	border-radius: 10px;
+	background-color: #cbcbcb;
+	position: relative;
+	overflow: hidden;
+}
+.validation span img{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+}
+.IDpic .validation span var{
+	display: block;
+	width: 0.8rem;
+	height: 0.8rem;
+	background:url(i/IDpic.png) no-repeat 0 0;
+	background-size: 100% 100%;
+	margin: 0.3rem auto 0;
+}
+.btnFo>span{
+	margin-left: 1.5rem;
+}
+.pageTwofind{
+	/*padding-top: 0.92rem;*/
+	/*width:5.84rem;*/
+	padding-left: 3.3rem;
+	margin: 0.92rem auto 0; 
+	/*border: 1px solid green*/
+}
+.pageTwofind>img{
+	width: 0.6rem;
+	height: 0.6rem;
+	float: left;
+}
+.pageTwofind>p{
+	/*float: left;*/
+	font-size: 0.2rem;
+	color: #333;
+	margin-left: 1.1rem;
+}
+.pageTwofind .topDistance{
+	margin-top: 0.09rem;
+}
+
+.callMe{
+	/*float: left;*/
+	text-align: center;
+	font-weight: normal;
+	padding-top: 0.5rem;
+	font-size: 0.18rem;
+}
+.returnIndex{
+	display: block;
+	margin: 0.5rem auto 1.65rem;
+	text-align: center;
+	line-height: 0.5rem;
+	border-radius: 5px;
+	width: 2rem;
+	height: 0.5rem;
+	font-size: 0.2rem;
+	color: #fff;
+	background-color: #2284ff;
+}
+#comManPhoneWain{
+	display: none;
+}

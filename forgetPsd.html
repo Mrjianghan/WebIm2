@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="keywords" content="忘记密码"/>
+<meta name="description" content="忘记密码" />
+<title>忘记密码</title>
+<meta name="renderer" content="webkit"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+<meta name="viewport" content="initial-scale=1,width=device-width,maximum-scale=1,minimum-scale=1,user-scalable=no"/>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="format-detection" content="telephone=no">
+<meta name="format-detection" content="address=no">
+<!-- link css -->
+<link rel="stylesheet" type="text/css" href="css/m.css">
+<link rel="stylesheet" type="text/css" href="css/pubTopAndFoot.css">
+<link rel="stylesheet" type="text/css" href="css/forgetPsd.css">
+<link rel="shortcut icon" type="image/x-ico" href="img/iconheader.png">
+
+
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/rem.js"></script>
+<script type="text/javascript" src="js/axios.min.js"></script>
+</head>
+<body>
+<!-- 头部header部分 -->
+<div class="header clearfix">
+	<div class="logo clearfix">
+		<img src="css/i/logo.png">
+		<span class="logoText">惠众通享公众平台</span>
+	</div>
+</div>
+<!-- 中间内容部分 忘记密码01-->
+<div class="forgetCon marAuto" id="forgetPsdOne">
+	<h4 class="titleR">忘记密码</h4>
+	<div class="topDistance">
+		<p class="okVd emailErrorShow" id="emailTest">邮箱格式错误，请输入正确邮箱！</p>
+		<dl class="clearfix">
+			<dt>邮箱</dt>
+			<dd>
+				<input type="text" name="" id="forEmail" />
+			</dd>
+		</dl>
+		<p class="okVd" id="okVd">请输入正确的图片验证码！</p>
+		<dl class="clearfix">
+			<dt>验证码</dt>
+			<dd class="clearfix">
+				<div class="relPos" id="relPos">
+					<var id="changeImg">看不清楚？换一张</var>
+					<span id="hoverShow">
+						<img src="" id="imgAuthcode" />
+					</span>
+					<input type="text" id="forgetVdShow" name="" />		
+				</div>
+			</dd>
+		</dl>
+		<button class="btnNext" disabled id="btnNext">下一步</button>
+	</div>
+</div>
+<!-- 中间内容部分 忘记密码02-->
+<div class="forgetCon marAuto disNone" id="forgetPsdTwo">
+	<h4 class="titleR">修改密码</h4>
+	<div class="updatePsdOne clearfix">
+		<img src="img/duihao.png" />
+		<p>请访问邮件中给出的网页链接地址，</p>
+		<p>根据页面提示完成密码找回</p>
+		<a id="goEmailAdd">前往邮箱</a>
+	</div>
+</div>
+<!-- 页脚footer部分 -->
+<div class="footer">
+	<ul class="clearfix">
+		<li><a href="javascript:;">关于我们</a><em>|</em></li>
+		<li><a href="javascript:;">联系我们</a><em>|</em></li>
+		<li><a href="javascript:;">客服中心</a><em>|</em></li>
+		<li><a href="javascript:;">服务协议</a><em>|</em></li>
+		<li><a href="javascript:;">侵权投诉</a><em>|</em></li>
+		<li><a href="javascript:;">友情链接</a></li>
+	</ul>
+	<p>北京明日众创科技有限公司版权所有&copy;2016-2018<span>经营许可证：91110106MA009M9G4T</span></p>
+</div>
+<script type="text/javascript" src="js/forgetPsd.js"></script>
+</body>
+</html>

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="keywords" content="企业账号找回"/>
+<meta name="description" content="企业账号找回" />
+<title>企业账号找回</title>
+<meta name="renderer" content="webkit"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+<meta name="viewport" content="initial-scale=1,width=device-width,maximum-scale=1,minimum-scale=1,user-scalable=no"/>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="format-detection" content="telephone=no">
+<meta name="format-detection" content="address=no">
+<!-- link css -->
+<link rel="stylesheet" type="text/css" href="css/m.css">
+<link rel="stylesheet" type="text/css" href="css/chooseType.css">
+<link rel="stylesheet" type="text/css" href="css/pubTopAndFoot.css">
+<link rel="stylesheet" type="text/css" href="css/findqiyeNum.css">
+
+<link rel="stylesheet" type="text/css" href="css/enterAccountRetrieve.css">
+<link rel="stylesheet" href="source/Font-Awesome-master/css/font-awesome.min.css">
+<link rel="shortcut icon" type="image/x-ico" href="img/iconheader.png">
+
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/axios.min.js"></script>
+<script type="text/javascript" src="js/qs.js"></script>
+<script type="text/javascript" src="js/rem.js"></script>
+</head>
+<body>
+<!-- 头部header部分 -->
+<div class="header clearfix">
+	<div class="logo clearfix">
+		<img src="css/i/logo.png">
+		<span class="logoText">惠众通享公众平台</span>
+	</div>
+</div>
+<!-- 中间内容部分 -->
+<div class="marAuto clearfix" style="margin-bottom:2rem;" id="boxhide">
+	<div class="radShow" style="margin-bottom:0;">
+		<div class="enterpriseInfor personalInfor noPadTop noPadLeft">
+			<h4>更换管理者设置</h4>
+			<ul class="processLine flowXian clearfix">
+				<li class="clearfix">
+					<var class="chooseOn" id="registerTwoVar">
+						<span class="chooseOn" id="registerTwoSpan">1</span>		
+					</var>
+					<p class="becColor" id="registerTwoP">邮箱验证</p>
+				</li>
+				<li class="clearfix">
+					<!-- //overSee -->
+					<var class="" id="registerOneVar">
+						<span class="" id="registerOneSpan">2</span>		
+					</var>
+					<p class="" id="registerOneP">现管理者登记</p>
+				</li>
+				<li class="clearfix">
+					<var class="" id="registerTwoVar">
+						<span class="" id="registerTwoSpan">3</span>		
+					</var>
+					<p class="" id="registerTwoP">完成</p>
+				</li>
+            </ul>
+            <!-- 企业账号内容 -->
+			<div class="topDistance">
+                <p class="okVd emailErrorShow" id="emailTest">邮箱格式错误，请输入正确邮箱！</p>
+                <dl class="clearfix">
+                    <dt>邮箱</dt>
+                    <dd>
+                        <input type="text" name="" id="forEmail" />
+                    </dd>
+                </dl>
+                <p class="okVd" id="okVd">请输入正确的图片验证码！</p>
+                <dl class="clearfix">
+                    <dt>验证码</dt>
+                    <dd class="clearfix">
+                        <div class="relPos" id="relPos">
+                            <var id="changeImg">看不清楚？换一张</var>
+                            <span id="hoverShow">
+                                <img src="" id="imgAuthcode" />
+                            </span>
+                            <input type="text" id="forgetVdShow" name="" />		
+                        </div>
+                    </dd>
+                </dl>
+                <button class="btnNext" disabled id="btnNext">下一步</button>
+            </div>
+		</div>
+	</div>
+</div>
+
+
+<!-- 跳至准备邮箱发送页面 -->
+<div class="yzEmail disNone" id="yzEmail">
+	<h4>邮箱验证</h4>
+	<dl class="clearfix">
+		<dt>
+			<img src="img/emailGo.png" alt=""/>
+		</dt>
+		<dd>
+			<p>请在30分钟内到达您的邮箱<span id="emailText">xxx.com</span></p>
+			<p>访问邮件中给出的网页链接地址</p>
+			<p>根据页面提示完成邮箱验证</p>
+		</dd>
+	</dl>
+	<a id="enterEmail">前往邮箱</a>
+</div>
+<!-- 底部部分 -->
+<div class="footer">
+	<ul class="clearfix">
+		<li><a href="javascript:;">关于我们</a><em>|</em></li>
+		<li><a href="javascript:;">联系我们</a><em>|</em></li>
+		<li><a href="javascript:;">客服中心</a><em>|</em></li>
+		<li><a href="javascript:;">服务协议</a><em>|</em></li>
+		<li><a href="javascript:;">侵权投诉</a><em>|</em></li>
+		<li><a href="javascript:;">友情链接</a></li>
+	</ul>
+	<p>北京明日众创科技有限公司版权所有&copy;2016-2018<span>经营许可证：91110106MA009M9G4T</span></p>
+</div>
+<script type="text/javascript" src="js/findqiyeNum.js"></script>
+
+</body>
+</html>

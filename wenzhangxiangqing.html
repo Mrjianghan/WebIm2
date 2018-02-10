@@ -1,0 +1,450 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>文章预览</title>
+    <link rel="shortcut icon" type="image/x-ico" href="img/iconheader.png">
+    <link rel="stylesheet" type="text/css" href="css/m.css">
+    <link rel="stylesheet" type="text/css" href="css/quill.core.css">
+    <link rel="stylesheet" type="text/css" href="css/quill.snow.css">    
+    <script src="js/axios.min.js"></script>
+    <script src="js/jquery.js"></script>    
+    <style>
+        .box{
+            max-width: 750px;
+            margin: 0 auto;            
+            background-color: #fff;
+        }
+        .titleSize{
+            font-size: 18px;
+            padding:15px 15px 0 15px;
+        }
+        .textSize{
+            font-size: 16px;
+            padding: 15px;          
+        }
+        .textSize .dataSize{
+            font-size: 14px;            
+        }
+        .textSize .nameSize{
+            padding-left: 20px;
+            font-size: 14px;
+            color: #2284ff;
+        }
+        .textSize .btn1{
+            float: right;
+            border: none;
+            background:none;
+            background-color: #2284ff;
+            color: #fff;
+            padding: 0px 10px;
+            line-height: 24px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+        .conText{
+            font-size: 14px;
+            padding: 0px 10px 15px 15px;            
+        }
+        .conText img{ 
+            max-width: 100%;
+            display: block;
+            overflow: hidden;
+            margin:20px auto;
+            border: 1px solid #cbcbcb;
+        }
+        .speak{
+            padding:30px 15px 40px;        
+            font-size: 16px;        
+        }
+        .speak .zan{
+            float: left;
+        }
+        .speak .zanImg{
+            width:36px ;
+            height: 32px;
+            margin-right: 10px;
+            display: inline-block;
+            vertical-align: middle;  
+            background: url(img/xin.png) no-repeat 0 0;
+            background-size:100% 100%;
+        }
+        .speak .zanText{
+            display: inline-block;
+            font-size: 14px;
+            font-style: normal;
+            line-height: 32px;
+            max-width: 40px;
+        }
+        .speak .zan2{
+            text-align: center; 
+        }
+        .speak .zan3{
+            float: right;
+            text-align: left;
+            cursor: pointer;
+        }
+        .speak .zanImg2{
+            background: url(img/pinglun.png) no-repeat 0 0;
+            background-size:100% 100%;
+        }
+        .speak .zanImg3{
+            background: url(img/zhuanfa.png) no-repeat 0 0;
+            background-size:100% 100%;
+        }
+        .allCon{
+            background-color: #f1f1f1;
+            padding: 30px 15px 0 ;
+            position: relative;
+        }
+        .allCon .xian1{
+            float: left;
+            width: 35%;
+            height: 2px;
+            background-color: #e5e5e5;
+            margin-top: 12px;
+        }
+        .allCon .xian2{
+            float: right;
+            width: 35%;
+            height: 2px;
+            background-color: #e5e5e5;
+            margin-top: -12px;                
+        }
+        .textXian{
+            width: 70px;
+            margin: 0 auto;
+            text-align: center;
+            font-size: 16px;
+            text-align: center;
+        }
+        .pinglunCon{
+            padding-top: 40px;
+        }
+        .userHeadImg{
+            width: 50px;
+            height:50px;
+            border: 1px solid #e5e5e5;
+            border-radius: 5px;
+            /* display: inline-block; */
+            float: left;
+            margin-right: 5px;
+        }
+        .userName{
+            vertical-align: top;
+            font-style: normal;
+            font-size: 16px;
+            margin-top: 2px;
+            display: inline-block;
+        }
+        .sendTime{
+            display: block;
+            font-style: normal;
+            font-size: 16px;
+            margin-top: 10px;
+        }
+        .sendConText{
+            margin-left: 58px;
+            margin-top: 5px;
+            font-size: 16px;
+            overflow: hidden;
+        }
+        .writeImg{
+            width: 75px;
+            height: 75px;
+            display: block;
+            overflow: hidden;
+            position: absolute;
+            right: 30px;
+        }
+        .bomXian{
+            padding-bottom: 10px;
+            border-bottom: 1px solid #e5e5e5;
+        }
+        .isgood em.zanImg{
+        	background:url(img/redxin.png) no-repeat 0 0;
+        	background-size: 100% 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <h4 class="titleSize" id="titleSize">标题</h4>
+        <div class="textSize clearfix">
+            <span class="dataSize" id="conTime">2018-01-23</span>
+            <span class="nameSize" id="userId">用户id</span>        
+            <!-- <span class="nameSize">公众号名称</span> -->         
+        </div>
+        <!-- 文章详情内容区 -->
+        <div class="conText ql-editor" id="conText">
+            内容
+        </div>
+        <div class="speak clearfix">
+        	<!-- 分享 -->
+            <span class="zan3" id='zhuanf' onclick='window.WebViewJavascriptBridge.callHandler("shareToFriends", { "goods_id": "id"});'>
+                <em class="zanImg zanImg3"></em>   
+                <var class="zanText" id="fenxiangNum">233</var>
+            </span> 
+            <!-- 点赞 -->
+            <span class="zan" id='isgood'>
+                <em class="zanImg"></em>
+                <var class="zanText" id="dianzanNum">136</var>
+            </span>
+            <!-- 用户评论 -->
+            <p class='zan2' id='pingl'>
+                <em class="zanImg zanImg2"></em>
+                <var class="zanText" id="pinglunNum">566</var>
+            </p>
+        </div>
+        <div class="allCon" id= 'allCon'>
+            <span class="xian1"></span>
+            <p class="textXian">全部评论</p>
+            <span class="xian2"></span>
+            <!-- <img src="img/writePingLun.png" class="writeImg" alt=""> -->
+            <!--<div class="bomXian">   
+                <div class="pinglunCon clearfix">
+                    <img src="" alt="" class="userHeadImg" />
+                    <em class="userName">王大锤</em>
+                    <em class="sendTime">10:33</em>                
+                </div>
+                <p class="sendConText">小小的身影，回忆于此有关。</p>
+                <p class="sendConText">作者回复</p>     
+                <p class="sendConText">11:33</p>     
+                <p class="sendConText">加油！加油！加油！加油！加油！</p>
+            </div>-->
+        </div>
+    </div>
+    <script>
+
+        getsearch = window.location.search;
+            console.log(getsearch);
+            console.log(getsearch.substr(44,32));
+            var getid = getsearch.substr(4,32);
+            var getuserid = getsearch.substr(44,32);     	 
+            var goodt = false;
+            var wid =getid;
+            var uid =getuserid;
+
+    	// var wid ='57c96e8eb0cd4b358f4cc9b925be37c7';//文章id
+    	// var uid ='fe73988f40b6472493c91e8457799861';//用户id  
+
+    	
+    	var goodt = false;
+    	
+    	window.onload = function(){
+		    start();
+    	}
+
+    	function stringIn(obj){
+    		var s = '';
+    		for(var i in obj){
+    			s+= i+"="+obj[i]+'&';
+    		}
+    		s+='t='+new Date();
+    		return s;
+    	}
+    	
+    	document.getElementById('isgood').onclick = function(){
+            if(!uid){
+                alert('请登录后操作');
+                return;
+            }
+    		if(goodt){
+    			alert('你的操作太频繁了');
+    			return;
+    		}
+    		goodt = true;
+    		var _this = this;
+    		var dianzanNo = this.className=='zan'?1:-1;
+    		console.log(dianzanNo);
+    		var center = {
+    			"writingsId":wid,
+    			"publicId":null,
+    			"dianzanNo":dianzanNo,
+    			"handlersId":uid
+    		};
+    		axios.post(linkAddress+'/im/public/praise/insert.json?'+stringIn(center)).then(function(res){
+                if(res['data']['code'] == 2000){
+                    var m = parseInt(_this.getElementsByTagName('var')[0].innerHTML);
+                	_this.getElementsByTagName('var')[0].innerHTML = _this.className=='zan'?(m+1):(m-1);
+                	_this.className = _this.className=='zan'?'zan isgood':'zan';
+                    
+                }else{
+                	alert('点赞失败');
+                }
+                goodt = false;
+            }).catch(function(err){
+            	alert('因网络原因 点赞失败');
+                console.log(err);
+                goodt = false;
+            });
+    	}
+    	
+    	
+    	
+        function setupWebViewJavascriptBridge(callback) {
+            if(window.WebViewJavascriptBridge) {
+                return callback(WebViewJavascriptBridge);
+            }
+            if(window.WVJBCallbacks) {
+                return window.WVJBCallbacks.push(callback);
+            }
+            window.WVJBCallbacks = [callback];
+            var WVJBIframe = document.createElement('iframe');
+            WVJBIframe.style.display = 'none';
+            WVJBIframe.src = 'wvjbscheme://__BRIDGE_LOADED__';
+            document.documentElement.appendChild(WVJBIframe);
+            setTimeout(function() {
+                document.documentElement.removeChild(WVJBIframe)
+            }, 0)
+        }				
+        //IOS调用js方法					
+        setupWebViewJavascriptBridge(function(bridge) {
+            bridge.init(function(message, responseCallback) {  
+                console.log( message);  
+                // var data = {  
+
+                // };  
+                // console.log(data);
+                // console.log(data.officialId);
+                // console.log(data.userId);
+                responseCallback(data);   
+            });  
+            //1 注册JS的方法给OC
+            bridge.registerHandler('getOfficialAccountsDetailInformation', function(data, responseCallback) {
+                // document.getElementById("show").innerHTML = ('展示内容:' + data['officialId'] + ',' + data['userId'] + '!!');
+                // wid = data['officialId'];
+                // uid = data['userId'];
+               // start();
+                // alert('展示内容:' + data['officialId'] + ',' + data['userId'] + '!!');
+//              console.log(data);
+                responseCallback(data);
+            })
+        });
+        function connectWebViewJavascriptBridge(callback) {  
+            if (window.WebViewJavascriptBridge) {  
+                callback(WebViewJavascriptBridge)  
+            } else {  
+                document.addEventListener(  
+                    'WebViewJavascriptBridgeReady'  
+                    , function() {  
+                        callback(WebViewJavascriptBridge)  
+                    },  
+                    false  
+                );  
+            }  
+        }  
+        //安卓使用 注册回调函数，第一次连接时调用 初始化函数  
+        connectWebViewJavascriptBridge(function(bridge) {  
+            bridge.init(function(message, responseCallback) {  
+                console.log(data);  
+                responseCallback(data);  
+            });
+            bridge.registerHandler("getOfficialAccountsDetailInformation", function(data,responseCallback) {  
+                // wid = data['officialId'];
+                // uid = data['userId'];
+		//start();
+                responseCallback(data);  
+            });  
+        });
+
+
+		function start(){
+	        axios.post(linkAddress+'/im/writings/find/by/id.json?id='+wid+'&userId='+uid).then(function(res){
+	          	console.log(res);
+	            if(res['data']['code']==2000){
+	                document.getElementById('titleSize').innerHTML=res['data']['data']['title'];//文章标题
+	                document.getElementById('conText').innerHTML=res['data']['data']['text'];//文章内容
+	                document.getElementById("userId").innerHTML=res['data']['data']['userId'];//用户id
+	                document.getElementById('conTime').innerHTML=getTime();
+	                var cl = res['data']['data']['handlersId']==null?'zan':'zan isgood';
+	                document.getElementById('isgood').className = cl;
+	                document.getElementById('isgood').getElementsByTagName('var')[0].innerHTML = res['data']['data']['dianzanNo']||0;
+	          		document.getElementById('pingl').getElementsByTagName('var')[0].innerHTML = res['data']['data']['pinglunNo']||0;
+	          		document.getElementById('zhuanf').getElementsByTagName('var')[0].innerHTML = res['data']['data']['zhuanfaNo']||0;
+	            }else{
+	                alert(res['data']['message']);
+	            }
+	        }).catch(function(err){
+	            console.log(err);
+	        });
+	        //请求回复评论接口并渲染页面
+	        axios.post(linkAddress+'/im/public/comment/find/all/w/pC.json?writingsId='+wid).then(function(res){
+	        	console.log(res);
+	            if(res['data']['code']==2000){
+	                var data = res['data']['data']['content'];
+	                var onbox = document.getElementById('allCon');
+	                for(var i in data){
+	                    var bomxian=document.createElement('div');
+	                    bomxian.className='bomXian';
+	                    var uname = document.createElement('div');
+	                    uname.className = 'pinglunCon clearfix';
+	                    var imgs = document.createElement('img');
+	                    imgs.className = 'userHeadImg';
+	                    imgs.src = linkAddressTwo+data[i]['avatar'];
+	                    uname.appendChild(imgs);
+	                    var em1 = document.createElement('em');
+	                    var em2 = document.createElement('em');
+	                    em1.className='userName';
+	                    em2.className='sendTime';
+	                    em1.innerHTML = data[i]['nickname'];
+	                    em2.innerHTML = getLocalTime(data[i]['created']);
+	                    uname.appendChild(em1);
+	                    uname.appendChild(em2);
+	                 	bomxian.appendChild(uname);
+	                    var p = document.createElement('p');
+	                    p.className = 'sendConText';
+                        var ss= decodeURIComponent(data[i]['pinglunText'],"UTF-8") //字符转码
+	                    p.innerHTML =ss;
+	                    bomxian.appendChild(p);
+	                    for(var j in data[i]['imPublicReplies']){
+	                    	var op = document.createElement('p');
+		                    op.className = 'sendConText';
+		                    op.innerHTML = '作者回复';
+		                    var op1 = document.createElement('p');
+		                    op1.className = 'sendConText';
+		                    op1.innerHTML = getLocalTime(data[i]['imPublicReplies'][j]['created']);
+		                    var op2 = document.createElement('p');
+		                    op2.className = 'sendConText';
+		                    op2.innerHTML = data[i]['imPublicReplies'][j]['replyText'];
+		                    bomxian.appendChild(op);
+		                    bomxian.appendChild(op1);
+		                    bomxian.appendChild(op2);
+	                    }
+						onbox.appendChild(bomxian);
+	                }
+	            }
+	        }).catch(function(err){
+	            console.log(err);
+	        });
+
+		}
+
+       
+		function getLocalTime(nS) {     
+		  	return new Date(parseInt(nS)).toLocaleString().replace(/:\d{1,2}$/,' ');    
+		}   
+        //获取时间
+        function getTime(){
+            var time=new Date();
+            var year=time.getFullYear();//获取年
+            var month=time.getMonth()+1;//获取月
+            var day=time.getDate();//获取天
+            console.log(year+'|'+month+'|'+day);
+            var data=year+"-";
+            if(month<10){
+                data+="0";
+            }
+            data+=month+"-";
+            if(day<10){
+                data+="0"
+            }
+            data+=day+" ";
+            return data;
+        }
+    </script>
+</body>
+</html>

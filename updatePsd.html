@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="keywords" content="忘记密码"/>
+<meta name="description" content="忘记密码" />
+<title>修改密码</title>
+<meta name="renderer" content="webkit"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+<meta name="viewport" content="initial-scale=1,width=device-width,maximum-scale=1,minimum-scale=1,user-scalable=no"/>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="format-detection" content="telephone=no">
+<meta name="format-detection" content="address=no">
+<!-- link css -->
+<link rel="stylesheet" type="text/css" href="css/m.css">
+<link rel="stylesheet" type="text/css" href="css/pubTopAndFoot.css">
+<link rel="stylesheet" type="text/css" href="css/forgetPsd.css">
+<link rel="stylesheet" type="text/css" href="css/inTieManager.css">
+<link rel="stylesheet" href="source/Font-Awesome-master/css/font-awesome.min.css">
+
+<link rel="shortcut icon" type="image/x-ico" href="img/iconheader.png">
+
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/rem.js"></script>
+<script type="text/javascript" src="js/axios.min.js"></script>
+<script type="text/javascript" src="js/qs.js"></script>
+<script type="text/javascript" src="js/updatePsd.js"></script>
+
+</head>
+<body>
+<!-- 头部 -->
+<div id="app">
+    <div class="headercontainer">
+	    <div class="headercontent">
+		    <a><img class="icon1" src="css/i/logo.png"></a>
+		    <a><div class="mastertitle">惠众通享公众平台</div></a>
+		    <div class="headerright">
+			    <a href="javascript:;"><img class="rightpic" src="./source/alina-balgimbaeva-halloween-girl-hd.jpg"></a>
+			    <div class="userinfo">
+				    <div class="infotop">
+					    <a class="levelcontainer" id='Htype'></a>
+					    <a><i class="fa fa-envelope"></i></a>
+					    <div class="myclearfix"></div>
+				    </div>
+				    <div class="infobottom">
+					    <a href="javascript:;" id='UnameShow'></a>
+				    </div>
+			    </div>
+			    <div class="quitcon">
+				    <div class="quitbtn">退出</div>
+			    </div>
+			    <div class="myclearfix"></div>
+		    </div>
+		    <div class="myclearfix"></div>
+	    </div>
+    </div>
+</div>
+<!-- 中间内容部分 修改密码01-->
+<!-- <div class="forgetCon marAuto" id="forgetConThree">
+	<h4 class="titleR">修改密码</h4>
+	<div class="updatePsdTwo clearfix">
+		<img src="" class="showVd" id="showVd" />
+		<p>修改密码需要身份验证，请使用管理者IM扫描二维码进行验证</p>
+	</div>
+</div> -->
+<!-- 中间内容部分 修改密码02-->
+<div class="forgetCon marAuto" id="forgetConFour">
+	<h4 class="titleR">修改密码</h4>
+	<div class="updatePsdThree clearfix">
+		<p class="sourceError" id="primordialError">请输入正确原密码</p>
+		<dl class="sourcePsd clearfix">
+			<dt>原密码</dt>
+			<dd>
+				<input type="text" name="" id="primordialPsd" maxlength="20" />
+				<p class="sourceWain" id="primordialWain">请使用字母、数字和符号两种及以上的组合，6-20个字符</p>
+			</dd>
+		</dl>
+		<p class="sourceError" id="newSetPsdError">密码长度不足6位!</p>
+		<p id='a' style="display: none;"></p>
+		<dl class="sourcePsd clearfix">
+			<dt>新密码</dt>
+			<dd class="newPsd">
+				<input type="password" name="" id="newPSD" maxlength="20" />
+				<em class="invisibility" id="newSetPsdShow" state="off"></em>
+				<p class="sourceWain" id="newSetPsdWain">请使用字母、数字和符号两种及以上的组合，6-20个字符</p>
+			</dd>
+		</dl>
+		<p class="sourceError" id="surePsdError">两次输入的密码不一致!</p>
+		<dl class="sourcePsd clearfix">
+			<dt>确认密码</dt>
+			<dd class="newPsd">
+				<input type="password" name="" id="surePsd" maxlength="20" />
+				<em class="invisibility" id="surePsdShow" state="off"></em>
+				<p class="sourceWain" id="surePsdWain">请再次输入密码</p>
+			</dd>
+		</dl>
+		<!-- <p class="sourceError" id="imageVdError">请输入正确的图片验证码！</p>
+		<dl class="clearfix">
+			<dt>验证码</dt>
+			<dd class="relPos clearfix"  style="border: none;">
+				<var id="changeImg">看不清楚？换一张</var>
+				<span>
+					<img src=""  id="replaceImageVd"/>
+				</span>
+				<input type="text" name="" maxlength="8" id="imageVdInput" />
+			</dd>
+		</dl> -->
+		<div class="updatePsdBtnFo clearfix">
+			<button disabled id="submitData">提交</button>
+			<button class="returnPre" id="returnSweepYard">返回</button>
+		</div>
+	</div>
+</div>
+<!-- 页脚footer部分 -->
+<div class="footer">
+	<ul class="clearfix">
+		<li><a href="javascript:;">关于我们</a><em>|</em></li>
+		<li><a href="javascript:;">联系我们</a><em>|</em></li>
+		<li><a href="javascript:;">客服中心</a><em>|</em></li>
+		<li><a href="javascript:;">服务协议</a><em>|</em></li>
+		<li><a href="javascript:;">侵权投诉</a><em>|</em></li>
+		<li><a href="javascript:;">友情链接</a></li>
+	</ul>
+	<p>北京明日众创科技有限公司版权所有&copy;2016-2018<span>经营许可证：91110106MA009M9G4T</span></p>
+</div>
+</body>
+</html>

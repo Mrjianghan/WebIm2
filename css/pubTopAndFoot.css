@@ -1,0 +1,246 @@
+.header{
+	width: 100%;
+	height: 1rem;
+	background-color: #fff;
+}
+.header .logo{
+	/*padding-left: 1.2rem;*/
+	width: 12rem;
+	margin: 0 auto;
+	/*float: left;*/
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+.header .loginLogo{
+	padding-left: 1.2rem;
+	float: left;
+}
+.header .logo img{
+	width: 0.64rem;
+	height: 0.64rem;
+	margin: 0.18rem 0rem;
+	float: left;
+}
+.header .logo .logoText{
+	font-size:0.36rem;
+	color: #333;
+	line-height: 1rem;
+	padding-left: 0.3rem;
+}
+.header .loginLogo .logoText{
+	color: #999;
+}
+.header .logo .logoText var{
+	display: inline-block;
+	font-style: normal;
+	margin:0 0.14rem; 
+}
+.header .registrationText{
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	float: right;
+	padding-right: 1.75rem;
+}
+.header .registrationText .raCssText{
+	display: block;
+	width: 100%;
+	font-size: 0.2rem;
+	color:#2284ff;
+	padding-top: 0.53rem;
+	text-decoration: none;
+}
+.footer{
+	width: 100%;
+	height: 2rem;
+	background-color: #b8b9b9;
+	padding-top: 0.66rem;
+}
+.footer ul{
+	padding-left: 5.59rem;
+}
+.footer li{
+	float: left;
+}
+.footer li a{
+	font-size: 0.2rem;
+	color: #fff;
+	text-decoration: none;
+}
+.footer li em{
+	display: inline-block;
+	font-style: normal;
+	font-size: 0.2rem;
+	margin: 0 0.3rem;
+	color: #fff;
+}
+.footer p{
+	text-align: center;
+	color: #fff;
+	font-size: 0.18rem;
+	padding-top: 0.3rem;
+}
+.footer p span{
+	display: inline-block;
+	padding-left: 0.4rem;
+}
+
+/*内容*/
+.marAuto{
+	width: 12rem;
+	margin: 0 auto ;
+}
+.radShow{
+	margin-top: 1rem;
+	background-color: #fff;
+	border-radius: 5px;
+	margin-bottom: 2rem;
+}
+.marAuto .titleR{
+	color: #333;
+	padding-left: 0.46rem;
+	font-size: 0.24rem;
+	font-weight: normal;
+	line-height: 1rem;
+	height: 1rem;
+	background-color: #f6f6f6;
+	border-radius: 0.05rem;
+
+}
+/*流程线部分*/
+.processLine{
+	width: 8.4rem;
+	margin:0 auto;
+}
+.processLine li{
+	float: left;
+	width: 25%;
+}
+.processLine li var{
+	float: left;
+	height: 0.06rem;
+	width:100%; 
+	margin-top: 0.95rem;
+	font-style: normal;
+	position: relative;
+	background-color: #cbcbcb;
+
+}
+.chooseOn{
+	background-color: #2284ff!important;
+}
+.processLine li var span{
+	width: 0.5rem;
+	height: 0.5rem;
+	background-color: #cbcbcb;
+	position: absolute;
+	border-radius: 50%;
+	color:#fff;
+	line-height: 0.5rem;
+	font-size: 0.24rem;
+	font-weight: bold;
+	text-align: center;
+	margin-top: -0.23rem;
+	left: 38%;
+}
+.processLine li p{
+	width: 100%;
+	float: left;
+	font-size: 0.2rem;
+	padding-top: 0.46rem;
+	text-align: center;
+	color:#cbcbcb;
+}
+.becColor{
+	color: #2284ff!important;
+} 
+/*主页头部*/
+.headercontainer {
+	width: 100%;
+	height: 1rem;
+	background-color: #fff;
+}
+.headercontent {
+	width: 12rem;
+	height: 100%;
+	margin: 0 auto;
+}
+.myclearfix {
+	clear: both;
+}
+.icon1 {
+	width: 0.66rem;
+	height: 0.66rem;
+	margin-top: 0.17rem;
+	float: left;
+}
+.mastertitle {
+	font-size: 0.36rem;
+	float: left;
+	height: 1rem;
+	line-height: 1rem;
+	margin-left: .3rem;
+	color: #333;
+}
+.headerright {
+	width: 3.1rem;
+	height: 0.66rem;
+	margin-top: 0.17rem;
+	float: right;
+}
+.rightpic {
+	width: 0.66rem;
+	height: 0.66rem;
+	float: left;
+}
+.userinfo {
+	height: 100%;
+	margin-left: 0.25rem;
+	width: 1.5rem;
+	float: left;
+}
+.infotop {
+	height: .33rem;
+	width: 1.50rem;
+	display: inline-block;
+	/*line-height: 33px;*/
+}
+.infotop a {
+	padding: 0;
+	margin: 0;
+}
+.infobottom {
+	margin-top: 0.04rem;
+	font-size: 0.24rem;
+	color: #333;
+}
+.infobottom a {
+	color: #333;
+}
+.levelcontainer {
+	font-size: 18px;
+	width: 77px;
+	height: 33px;
+	line-height: 33px;
+	text-align: center;
+	background-color: #2284ff;
+	border-radius: 8px;
+	color: #fff;
+	float: left;
+}
+.quitcon {
+	height: 66px;
+	float: left;
+	border-left: 1px solid #cbcbcb;
+}
+.quitbtn {
+	margin-left: 20px;
+	margin-top: 34px;
+	font-size: 24px;
+	cursor: pointer;
+}
+.fa-envelope {
+	font-size: 0.4rem !important;
+	margin-top: -5px;
+	color: #cbcbcb;
+	margin-left: 8px;
+}

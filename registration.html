@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="keywords" content="注册"/>
+<meta name="description" content="注册" />
+<title>注册</title>
+<meta name="renderer" content="webkit"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+<meta name="viewport" content="initial-scale=1,width=device-width,maximum-scale=1,minimum-scale=1,user-scalable=no"/>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="format-detection" content="telephone=no">
+<meta name="format-detection" content="address=no">
+<!-- link css -->
+<link rel="stylesheet" type="text/css" href="css/m.css">
+<link rel="stylesheet" type="text/css" href="css/registration.css">
+<link rel="stylesheet" type="text/css" href="css/pubTopAndFoot.css">
+<link rel="shortcut icon" type="image/x-ico" href="img/iconheader.png">
+
+
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/jquery.base64.js"></script>
+<script type="text/javascript" src="js/rem.js"></script>
+<script type="text/javascript" src="js/axios.min.js"></script>
+</head>
+<body>
+<!-- 头部header部分 -->
+<div class="header clearfix">
+	<div class="logo clearfix">
+		<img src="css/i/logo.png">
+		<span class="logoText">惠众通享公众平台</span>
+	</div>
+</div>
+<!-- 中间内容部分 -->
+<div class="marAuto clearfix">
+	<div class="radShow">
+		<h4 class="titleR" id="titleR">每个IM账户仅能申请一个公众号</h4>
+		<ul class="processLine clearfix">
+			<li class="clearfix">
+				<var class="chooseOn">
+					<span class="chooseOn">1</span>		
+				</var>
+				<p class="becColor">基本信息</p>
+			</li>
+			<li class="clearfix">
+				<var>
+					<span>2</span>		
+				</var>
+				<p>选择类型</p>
+			</li>
+			<li class="clearfix">
+				<var>
+					<span>3</span>		
+				</var>
+				<p>信息登记</p>
+			</li>
+			<li class="clearfix">
+				<var>
+					<span>4</span>		
+				</var>
+				<p>公众号信息</p>
+			</li>
+		</ul>
+		<!-- 第一步 基本信息 -->
+		<div class="basic clearfix" id="basic">
+			<div class="formCon">
+				<div class="bdShow">
+					<p class="emailError" id="emailError">邮箱格式错误，请填写正确邮箱！</p>
+					<span class="emailText">邮箱</span>
+					<input type="text" id="emailText" />
+					<h6 id="unAble">请填写常用邮箱作为登录账号，仅支持以下邮箱：网易163邮箱、网易126邮箱、新浪邮箱、QQ邮箱(foxmail)、搜狐邮箱、雅虎邮箱</h6>
+					<!-- 设置密码input -->
+					<!-- <p class="emailError" id="psdError">密码长度不足6位！</p>
+					<p id='a' style="display: none;"></p>
+					<span class="emailText emailSetPSD">设置密码</span>
+					<div class="posiRel">
+						<input type="password" id="setPsd" maxlength="20" />
+						<em class="invisibility" id="invisibility" state="off"></em>
+					</div> -->
+					<!-- 设置密码input -->
+					<!-- <h6 id="NoCombination">请使用字母、数字和符号两种及以上的组合，6-20个字符</h6>
+					<p class="emailError" id="notTheSame">两次输入的密码不一致!</p>
+					<span class="emailText emailSetPSD">确认密码</span>
+					<div class="posiRel">
+						<input type="password" id="surePsd" maxlength="20" />
+						<em class="invisibility" id="showOrhide" state="off"></em>
+					</div>
+					<h6 id="wirtePsdAgain">请再次输入密码</h6> -->
+					<p class="emailError" id="vdpsdError">请输入正确的图片验证码!</p>
+					<span class="emailText vdpsd">验证码</span>
+					<div class="posiRel">
+						<input type="text" id="vdpsd" maxlength="8"/>
+						<span class="vbdShow" id="vbdShow">
+							<img src="" id="enrollOneAuthcode" />
+						</span>
+						<span class="noSeeClearly" id="noSeeClearly">看不清楚？换一张</span>
+					</div>
+					<h5>
+						<label>
+							<var id="orNotSelect" class="orNotSelect">
+								<input type="checkbox" id="haveRead" name="haveRead" style="display: none;" />							
+							</var>
+							阅读并同意<a href="yunyingfanwei.html" target="_blank">《公众平台服务协议》</a>
+						</label>
+					</h5>
+					<button type="button" disabled class="nextGo" id="nextGo">下一步</button>				
+				</div>
+				<div class="whiteBG"></div>
+			</div>
+			<div class="haveLogin">
+				<p>已有IM账号？<a href="index.html">立即登录</a></p>
+			</div>
+		</div>
+		<!-- 前往激活账号部分 -->
+		<div class="activation" id="activation">
+			<div class="imgAuto">
+				<img src="img/plane.png" class="planeImg" />
+			</div>
+			<h6>感谢您注册惠众通享公众平台</h6>
+			<h6>请在30分钟内到您的注册邮箱激活账号</h6>
+			<h5 id="emailShow"></h5>
+			<a id="goEmailAdd">前往激活账号</a>
+		</div>
+	</div>
+</div>
+<div class="footer">
+	<ul class="clearfix">
+		<li><a href="javascript:;">关于我们</a><em>|</em></li>
+		<li><a href="javascript:;">联系我们</a><em>|</em></li>
+		<li><a href="javascript:;">客服中心</a><em>|</em></li>
+		<li><a href="javascript:;">服务协议</a><em>|</em></li>
+		<li><a href="javascript:;">侵权投诉</a><em>|</em></li>
+		<li><a href="javascript:;">友情链接</a></li>
+	</ul>
+	<p>北京明日众创科技有限公司版权所有&copy;2016-2018<span>经营许可证：91110106MA009M9G4T</span></p>
+</div>
+<script type="text/javascript" src="js/registration.js"></script>
+</body>
+</html>

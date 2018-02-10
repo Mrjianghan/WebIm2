@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">	
+<meta name="keywords" content="登录"/>
+<meta name="description" content="登录" />
+<title>登录</title>
+<meta name="renderer" content="webkit"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+<meta name="viewport" content="initial-scale=1,width=device-width,maximum-scale=1,minimum-scale=1,user-scalable=no"/>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="format-detection" content="telephone=no">
+<meta name="format-detection" content="address=no">
+<!-- link css -->
+<link rel="stylesheet" type="text/css" href="css/m.css">
+<link rel="stylesheet" type="text/css" href="css/pubTopAndFoot.css">
+<link rel="stylesheet" type="text/css" href="css/index.css">
+<!-- 网页头部标志 -->
+<link rel="shortcut icon" type="image/x-ico" href="img/iconheader.png">
+
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/rem.js"></script>
+<script type="text/javascript" src="js/jquery.base64.js"></script>
+<script type="text/javascript" src="js/index.js"></script>
+<script type="text/javascript" src="js/axios.min.js"></script>
+</head>
+<body onload="getStorageNum();">
+<div class="header clearfix">
+	<div class="logo loginLogo clearfix">
+		<img src="img/logo_gray.png">
+		<span class="logoText">惠众通享<var>·</var>公众平台</span>
+	</div>
+	<div class="registrationText">
+		<a class="raCssText" href="registration.html">立即注册公众号</a>
+	</div>
+</div>
+<div class="bannerImg clearfix">
+	<div class="loginFrame">
+		<h5>账户登录</h5>
+		<p class="hint" id="hint">您输入的账号或者密码不正确，请重新输入。</p>
+		<div class="accountPassword">
+			<p class="account clearfix">
+				<em></em>
+				<input type="text" id="account" name="userName" placeholder="商务平台" />
+			</p>
+			<p class="account nobdbom clearfix">
+				<em class="passPng"></em>
+				<input type="password" name="password" id="password"  placeholder="密码" />
+			</p>
+		</div>
+		<var class="captcha" id="captcha">看不清楚？换一张</var>
+		<p class="validation clearfix" id="becomeBd">
+			<em class="vdPng"></em>
+			<input type="text" name="authcode" placeholder="验证码" id="validation" value="" maxlength="8" />
+			<span id="authCode">
+				<img src="" id="imgAuthcode"/>
+			</span>
+		</p>
+		<div class="framebtn clearfix">
+			<button class="loginBtn" disabled id="loginBtn">登录</button>		
+			<label class="labelCur">
+				<span class="redefine" id="redefine"></span>
+				<input type="checkbox" id="rememberAc" />
+				<var>记住账号</var>
+			</label>		
+			<a class="forgetPwd" href="JavaScript:;" id="forpwd">忘记密码</a>
+			<!-- <a href="findqiyeNum.html" class="forgetPwd findAc">企业账号找回</a> -->
+		</div>
+	</div>
+</div>
+<div class="classification">
+	<h4>账号分类</h4>
+	<div class="selfAndCom clearfix">
+		<div class="pubFrame clearfix" id="nom">
+			<div class="sc" id="self">
+				<img src="img/oneself.png" />
+				<var>个人号</var>
+				<var class="resolve">为个人提供的全方位信息传播媒介，创造价值，搭建信息窗口</var>
+			</div>	
+			<a href="yunyingfanwei.html" target="_blank" class="lookOver" id="selfBtn">查看运营范围</a>
+		</div>
+		<div class="pubFrame nomr" id="business">
+			<div class="sc clearfix" id="com">
+				<img src="img/com.png" />
+				<var>企业号</var>
+				<var class="resolve">为企业提供强大的业务服务和H5功能</var>
+			</div>	
+			<a href="yunyingfanwei.html" target="_blank" class="lookOver" id="comBtn">查看运营范围</a>
+		</div>
+	</div>
+</div>
+<div class="footer">
+	<ul class="clearfix">
+		<li><a href="javascript:;">关于我们</a><em>|</em></li>
+		<li><a href="javascript:;">联系我们</a><em>|</em></li>
+		<li><a href="javascript:;">客服中心</a><em>|</em></li>
+		<li><a href="javascript:;">服务协议</a><em>|</em></li>
+		<li><a href="javascript:;">侵权投诉</a><em>|</em></li>
+		<li><a href="javascript:;">友情链接</a></li>
+	</ul>
+	<p>北京明日众创科技有限公司版权所有&copy;2016-2018<span>经营许可证：91110106MA009M9G4T</span></p>
+</div>
+</body>
+</html>
